@@ -26,16 +26,16 @@ end
 # Cocktail.create(name: 'Moscow Mule')
 # Cocktail.create(name: 'Screwdriver')
 
-# require 'json'
-# require 'open-uri'
+require 'json'
+require 'open-uri'
 
-# url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'
-# drinks = open(url).read
-# cocktails = JSON.parse(drinks)
+url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'
+drinks = open(url).read
+cocktails = JSON.parse(drinks)
 
-# cocktails['drinks'].each do |cocktail|
-#   Cocktail.create(name: cocktail['strDrink'], image_url: cocktail['strDrinkThumb'])
-# end
+cocktails['drinks'].each do |cocktail|
+  Cocktail.create(name: cocktail['strDrink'], image_url: cocktail['strDrinkThumb'])
+end
 
 
 
