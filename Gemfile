@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 #secret keys
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.12.0'
 #style
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
