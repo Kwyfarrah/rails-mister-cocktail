@@ -1,0 +1,30 @@
+.navbar-lewagon {
+  position: sticky;
+  top: 0px;
+  height: 60px;
+}
+.navbar-lewagon {
+  justify-content: space-between;
+  border-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  background-color: #d1ad8e;
+  align-items: middle;
+  h1 {
+  flex-grow: 1;
+  color: #a34728;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.navbar-lewagon-brown {
+  background: #d1ad8e;
+  opacity: 0.8;
+}
