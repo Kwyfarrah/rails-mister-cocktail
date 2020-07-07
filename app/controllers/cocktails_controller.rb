@@ -25,7 +25,8 @@ class CocktailsController < ApplicationController
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :new
+      redirect_to new_cocktail_path
+      flash.alert = 'Sorry I just upset your cups of cocktail! Please input the "Name" again!'
     end
   end
 
@@ -63,6 +64,6 @@ class CocktailsController < ApplicationController
   end
 
   def cock_params
-    params.require(:cocktail).permit(:name, :image_url, :voting,:photo)
+    params.require(:cocktail).permit(:name, :image_url, :voting, :photo)
   end
 end

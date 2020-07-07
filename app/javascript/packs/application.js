@@ -16,15 +16,12 @@ document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
 });
 
-
 require("channels")
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 import jquery from 'jquery';
 window.$ = window.jquery = jquery;
-
-
 
 import 'bootstrap';
 

@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_121840) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "image_url", default: "https://www.rakumachi.jp/images/frontend/smartphone/nophoto_thumbnail.png"
+    t.text "image_url"
     t.integer "voting", default: 0
   end
 

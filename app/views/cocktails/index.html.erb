@@ -19,13 +19,14 @@
 
         <div class="card-cocktail">
           <%= link_to cocktail_path(cocktail) do %>
-            <% if cocktail.image_url.nil? %>
-            <%= image_tag 'https://www.rakumachi.jp/images/frontend/smartphone/nophoto_thumbnail.png', width:200, class:"card-img" %>
+            <% if cocktail.image_url != '' %>
+              <%= image_tag cocktail.image_url, width:400, class:"card-img" %>
+            <% elsif cocktail.photo.attached? %>
+               <%= cl_image_tag cocktail.photo.key, width: 400, crop: :scale %>
             <% else %>
-            <%= image_tag cocktail.image_url, width:200, class:"card-img" %>
+             <%= cl_image_tag("yoxubppsbfzrsw35gyw8",width: 200, crop: :fit) %>
             <% end %>
           <% end %>
-
           <div class="card-cocktail-infos">
             <div>
               <h2><%= cocktail.name %></h2>
@@ -35,7 +36,6 @@
               <% end %>
           </div>
         </div>
-
     <% end %>
   </div>
  </div>
