@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require 'json'
-# require 'open-uri'
+require 'json'
+require 'open-uri'
 
-# url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-# drinks = open(url).read
-# ingredients = JSON.parse(drinks)
+url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+drinks = open(url).read
+ingredients = JSON.parse(drinks)
 
-# ingredients["drinks"].each do |ingredient|
-#   Ingredient.create(name: ingredient["strIngredient1"])
-# end
+ingredients["drinks"].each do |ingredient|
+  Ingredient.create(name: ingredient["strIngredient1"])
+end
 
 # Cocktail.create(name: 'Mojito')
 # Cocktail.create(name: 'Long Island Iced')
@@ -26,16 +26,16 @@
 # Cocktail.create(name: 'Moscow Mule')
 # Cocktail.create(name: 'Screwdriver')
 
-require 'json'
-require 'open-uri'
+# require 'json'
+# require 'open-uri'
 
-url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'
-drinks = open(url).read
-cocktails = JSON.parse(drinks)
+# url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'
+# drinks = open(url).read
+# cocktails = JSON.parse(drinks)
 
-cocktails['drinks'].each do |cocktail|
-  Cocktail.create(name: cocktail['strDrink'], image_url: cocktail['strDrinkThumb'])
-end
+# cocktails['drinks'].each do |cocktail|
+#   Cocktail.create(name: cocktail['strDrink'], image_url: cocktail['strDrinkThumb'])
+# end
 
 
 

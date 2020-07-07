@@ -63,6 +63,6 @@ class CocktailsController < ApplicationController
   end
 
   def cock_params
-    params.require(:cocktail).permit(:name, :image_url, :voting)
+    params.require(:cocktail).permit(:name, :image_url, :voting,:photo)
   end
 end

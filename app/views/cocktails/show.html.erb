@@ -5,9 +5,9 @@
 <div class ="container">
   <div class="card-product">
     <% if @cocktail.image_url.nil? %>
-        <%= image_tag 'https://www.rakumachi.jp/images/frontend/smartphone/nophoto_thumbnail.png', width:200 %>
-        <% else %>
-        <%= image_tag @cocktail.image_url, width:200 %>
+      <%= cl_image_tag @cocktail.photo.key, width: 200, crop: :fill %>
+      <% else %>
+      <%= image_tag @cocktail.image_url, width:200 %>
     <% end %>
     <div class="card-product-infos">
       <h1>Ingredients</h1>

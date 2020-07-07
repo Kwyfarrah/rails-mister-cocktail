@@ -9,6 +9,7 @@
     <%= simple_form_for(@cocktail) do |f| %>
       <%= f.input :name %>
       <%= f.input :image_url, label: 'Image URL (if you have)' %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit "Confirm to add this cocktail" , class: "btn btn-primary"  %>
       <%= link_to cocktails_path do %>
       <button type="button" class="btn btn-warning">Back to homepage</button>
