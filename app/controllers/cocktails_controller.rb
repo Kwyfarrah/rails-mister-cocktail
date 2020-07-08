@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :find_cocktail, only: [:show]
+  before_action :find_cocktail, only: [:show, :vote]
 
   def index
     @cocktails = Cocktail.all.order(voting: :desc)
@@ -9,6 +9,10 @@ class CocktailsController < ApplicationController
       redirect_to search_cocktails_path(name: @name)
     else
       @cocktails = Cocktail.all.order(voting: :desc)
+    end
+    @cocktails.each do |cocktail|
+      cocktail.clicked = 0
+      cocktail.save
     end
   end
 
@@ -40,9 +44,15 @@ class CocktailsController < ApplicationController
   end
 
   def vote
-    @cocktail = Cocktail.find(params[:id])
-    @cocktail.voting += 1
-    @cocktail.save
+    if @cocktail.clicked == 0
+      @cocktail.voting += 1
+      @cocktail.clicked += 1
+      @cocktail.save
+    else
+      @cocktail.voting -= 1
+      @cocktail.clicked -= 1
+      @cocktail.save
+    end
   end
 
   def recommendation

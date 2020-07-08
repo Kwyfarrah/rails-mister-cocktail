@@ -17,7 +17,7 @@
   <div class ="cards">
     <% @cocktails.each do |cocktail| %>
 
-        <div class="card-cocktail">
+        <div class="card-cocktail" id="cocktail_<%= cocktail.id %>">
           <%= link_to cocktail_path(cocktail) do %>
             <% if cocktail.image_url != '' %>
               <%= image_tag cocktail.image_url, width:400, class:"card-img" %>

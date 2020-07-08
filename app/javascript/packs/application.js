@@ -3,11 +3,19 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-// import { voteUp } from '../components/vote';
-// document.addEventListener('turbolinks:load', () => {
-//   // Call your JS functions here
-//   voteUp();
-// });
+import { loadDynamicSearchText } from '../components/searchbar';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  // [...]
+  loadDynamicSearchText();
+});
+
+import { voteUp } from '../components/vote';
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  voteUp();
+});
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 

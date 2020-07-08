@@ -8,9 +8,6 @@ class DosesController < ApplicationController
 
   def new
     @dose = Dose.new
-    # respond_to do |format|
-    # format.js
-    # end
   end
 
   def create
@@ -25,7 +22,7 @@ class DosesController < ApplicationController
 
   def destroy
     @dose.destroy
-    redirect_to cocktail_path(@dose.cocktail)
+    render cocktail_path(@dose.cocktail)
   end
 
   private
